@@ -1,7 +1,7 @@
 /*
 * File Name : scheduler/logger_thread.hpp
 * Creation Date : 20-09-2017
-* Last Modified : Wed Sep 20 01:15:54 2017
+* Last Modified : Mon Sep 25 05:20:53 2017
 * Created By : Sayan Bandyopadhyay
 *
 *
@@ -20,12 +20,12 @@
 class LoggerThread
 {
 public:
-	LoggerThread(Scheduler& scheduler)
-	{this->scheduler_p = &scheduler;};
+	LoggerThread(std::shared_ptr<Scheduler> scheduler)
+	{this->scheduler_p = scheduler;};
 
 	void init();
 	void run();
 
 private:
-	Scheduler*	scheduler_p;
+	std::shared_ptr<Scheduler>	scheduler_p;
 };
